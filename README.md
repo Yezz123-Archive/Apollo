@@ -53,6 +53,8 @@ $ uvicorn main:app
 $ uvicorn main:app --reload
 ```
 
+- Here we can Switch Between using [SWAGGER UI](https://swagger.io/tools/swagger-ui/) or [Redoc](https://redocly.github.io/redoc/) to Play around the API.
+
 - You can Now Start using the Application, i use of the `/index` a simple Template based on this : <https://codepen.io/ma_suwa/pen/QWWqJBK>
 
 ```py
@@ -183,6 +185,10 @@ Includes preconfigured packages to kick start fastAPI app by just setting approp
 | [starlette](https://www.starlette.io/)                       | a lightweight ASGI framework/toolkit, which is ideal for building high performance asyncio services.                            |
 
 `yapf` packages for `linting and formatting`
+
+## Contributing
+
+- Join the APollo-AUTH's Creator and Contribute to the Project if you have any enhancement or add-ons to create a good and Secure Project, Help any User to Use it in a good and simple way.
 
 ## License
 

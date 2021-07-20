@@ -46,5 +46,4 @@ tox==3.24.0
 typing-extensions==3.10.0.0
 urllib3==1.26.6
 uvicorn==0.14.0
-virtualenv==20.6.0
 wrapt==1.12.1
