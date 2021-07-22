@@ -18,7 +18,7 @@ get_db = database.get_db
 
 
 @router.get("/get_item/{id}", response_model=schemas.ItemAInfo)
-def get_user(id, db: Session = Depends(get_db)):
+def get_item(id, db: Session = Depends(get_db)):
     db_item = crud.get_item_by_id(db, id=id)
     if db_item is None:
         raise HTTPException(status_code=400, detail="No item found")

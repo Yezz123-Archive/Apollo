@@ -23,5 +23,5 @@ def login_user(user: schemas.UserLogin, db: Session = Depends(get_db)):
     db_user = crud.get_Login(
         db, username=user.username, password=user.password)
     if db_user == False:
-        raise HTTPException(status_code=400, detail="Wrong username/password")
+        raise HTTPException(status_code=400, detail="Wrong username or password")
     return {"message": "User found"}
