@@ -23,8 +23,8 @@ app = FastAPI(
 )
 
 # includes all users routes
-app.include_router(register.router)
 app.include_router(login.router)
+app.include_router(register.router)
 app.include_router(get_user.router)
 
 # includes all items routes
