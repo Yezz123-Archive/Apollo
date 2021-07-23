@@ -6,6 +6,29 @@ A basic Application with multiple functionalities built with FastAPI aim to help
 
 ## Getting Started
 
+Apollo provide a Basic API Compose :
+
+#### Users :
+
+- [X] login : `http://127.0.0.1:8000/user/login`
+- [X] Register : `http://127.0.0.1:8000/user/register`
+- [X] Get User : `http://127.0.0.1:8000/user/get_user/{username}`
+
+#### Items :
+
+- [X] Add Item : `http://127.0.0.1:8000/item/add_item`
+- [X] Get Item : `http://127.0.0.1:8000/item/get_item/{id}`
+- [X] Delete Item : `http://127.0.0.1:8000/item/get_item/{id}`
+
+#### Payment :
+
+- [X] Add Item to Cart : `http://127.0.0.1:8000/cart/add_to_cart/{username}`
+- [X] Provide Item to Payments : `http://127.0.0.1:8000/cart/payment`
+- [X] Money Callback : `http://127.0.0.1:8000/cart/callback`
+- [X] Delete Cart Item : `http://127.0.0.1:8000/cart/delete_cart_item/{id}`
+
+> I pre-configured the Cruds with the payment process based on `PaypalAPI`, you can read the Official docs here [REST APIs / API Requests](https://developer.paypal.com/docs/api/reference/api-requests/)
+
 ### Prerequisites
 
 - Python 3.9.2 or higher
@@ -55,12 +78,7 @@ $ uvicorn main:app --reload
 
 - Here we can Switch Between using [SWAGGER UI](https://swagger.io/tools/swagger-ui/) or [Redoc](https://redocly.github.io/redoc/) to Play around the API.
 
-- You can Now Start using the Application, i use of the `/index` a simple Template based on this : <https://codepen.io/ma_suwa/pen/QWWqJBK>
-
-```py
-@app.get("/", response_class=HTMLResponse)
-def index():
-```
+- You can Now Start using the Application, i use a simple Template for the `index` file to simply launch `/docs` : <https://codepen.io/ma_suwa/pen/QWWqJBK>
 
 ### Configured Enviromment
 
@@ -78,67 +96,6 @@ SQLALCHEMY_DATABASE_URL = 'sqlite:///apollo.db'
 
 ```py
 SQLALCHEMY_DATABASE_URL = 'mysql://username:password@server/apollo'
-```
-
-- For the Routes i register all the routes at the main file to create a good Path Flow for the Project.
-- [main.py](main.py) :
-
-```py
-# includes all users routes
-app.include_router(register.router)
-app.include_router(login.router)
-app.include_router(get_user.router)
-
-# includes all items routes
-app.include_router(add_item.router)
-app.include_router(get_item.router)
-app.include_router(delete_item.router)
-
-# includes all cart 
-app.include_router(add_to_cart.router)
-app.include_router(payment.router)
-app.include_router(delete_cart_item.router)
-```
-
-- Then i pre-configured the Cruds with the payment process that PaypalAPI provide, you can read the Official docs here [REST APIs / API Requests](https://developer.paypal.com/docs/api/reference/api-requests/)
-- [Cruds.py](api/crud.py) :
-
-```py
-def payment(db: Session, phone_number: int, total: int):
-    consumer_key = 'consumer_key'
-    consumer_secret = 'consumer_secret'
-    api_URL = 'https://api-m.sandbox.paypal.com/v1/payments'
-
-    req = requests.get(api_URL, auth=HTTPBasicAuth(
-        consumer_key, consumer_secret))
-    money_access_token = json.loads(req.text)
-    validated_money_access_token = money_access_token['access_token']
-
-    time = datetime.now().strftime('%Y%m%d%H%M%S')
-    Business_code = 'short_code'  # replace with the business short code
-    passkey = "pass_key"
-    data_to_encode = Business_code + passkey + time
-    online_password = base64.b64encode(data_to_encode.encode())
-    decode_password = online_password.decode('utf-8')
-
-    access_token = validated_money_access_token
-    api_url = "https://api-m.sandbox.paypal.com/v1/payments/payment?count=10&start_index=0&sort_by=create_time&sort_order=desc"
-    headers = {"Authorization": "Bearer %s" % access_token}
-    request = {
-        "BusinessShortCode": Business_code,
-        "Password": decode_password,
-        "Timestamp": time,
-        "TransactionType": "CustomerPayBillOnline",
-        "Amount": total,
-        "PartyA": phone_number,
-        "PartyB": Business_code,
-        "PhoneNumber": phone_number,
-        "CallBackURL": "https://127.0.0.1:8000/callback",  # Money Callback
-        "AccountReference": "User Payment",
-        "TransactionDesc": "Testing stk push"
-    }
-    response = requests.post(api_url, json=request, headers=headers)
-    return response.text
 ```
 
 ## Running the Docker Container
@@ -188,7 +145,7 @@ Includes preconfigured packages to kick start fastAPI app by just setting approp
 
 ## Contributing
 
-- Join the APollo-AUTH's Creator and Contribute to the Project if you have any enhancement or add-ons to create a good and Secure Project, Help any User to Use it in a good and simple way.
+- Join the Apollo-AUTH Creator and Contribute to the Project if you have any enhancement or add-ons to create a good and Secure Project, Help any User to Use it in a good and simple way.
 
 ## License
 
