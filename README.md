@@ -1,6 +1,6 @@
 ![apollo](.github/header.svg)
 
-# Apollo - Auth
+# Apollo
 
 A basic Application with multiple functionalities built with FastAPI aim to help Users Buy New Items Provided by PaypalAPI to Complete the Payment and Check it.
 
@@ -42,10 +42,10 @@ Apollo provide a Basic API Compose :
 
 ```sh
 # clone the repo
-$ git clone https://github.com/yezz123/Apollo-Auth.git
+$ git clone https://github.com/yezz123/Apollo.git
 
 # move to the project folder
-$ cd Apollo-Auth
+$ cd Apollo
 ```
 
 ### Creating virtual environment
@@ -109,7 +109,7 @@ SQLALCHEMY_DATABASE_URL = 'mysql://username:password@server/apollo'
 $ docker build
 ```
 
-- list all the docker images and you can also see the image `nectus:latest` in the list.
+- list all the docker images and you can also see the image `apollo:latest` in the list.
 
 ```sh
 $ docker images
@@ -124,7 +124,7 @@ $ docker images
 > - `--name`: name of the container
 
 ```sh
-$ docker container run -p 5000:5000 -dit --name Apollo apollo-auth:latest
+$ docker container run -p 5000:5000 -dit --name Apollo apollo:latest
 ```
 
 - Check the status of the docker container
@@ -135,7 +135,7 @@ $ docker container ps
 
 ## Preconfigured Packages
 
-Includes preconfigured packages to kick start fastAPI app by just setting appropriate configuration.
+Includes preconfigured packages to kick start Apollo API by just setting appropriate configuration.
 
 | Package                                                      | Usage                                                                                                                           |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -148,7 +148,7 @@ Includes preconfigured packages to kick start fastAPI app by just setting approp
 
 ## Contributing
 
-- Join the Apollo-AUTH Creator and Contribute to the Project if you have any enhancement or add-ons to create a good and Secure Project, Help any User to Use it in a good and simple way.
+- Join the Apollo Creator and Contribute to the Project if you have any enhancement or add-ons to create a good and Secure Project, Help any User to Use it in a good and simple way.
 
 ## License
 
