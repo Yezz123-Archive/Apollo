@@ -8,24 +8,27 @@ A basic Application with multiple functionalities built with FastAPI aim to help
 
 Apollo provide a Basic API Compose :
 
-#### Users :
-
-- [X] login : `http://127.0.0.1:8000/user/login`
-- [X] Register : `http://127.0.0.1:8000/user/register`
-- [X] Get User : `http://127.0.0.1:8000/user/get_user/{username}`
-
-#### Items :
-
-- [X] Add Item : `http://127.0.0.1:8000/item/add_item`
-- [X] Get Item : `http://127.0.0.1:8000/item/get_item/{id}`
-- [X] Delete Item : `http://127.0.0.1:8000/item/get_item/{id}`
-
-#### Payment :
-
-- [X] Add Item to Cart : `http://127.0.0.1:8000/cart/add_to_cart/{username}`
-- [X] Provide Item to Payments : `http://127.0.0.1:8000/cart/payment`
-- [X] Money Callback : `http://127.0.0.1:8000/cart/callback`
-- [X] Delete Cart Item : `http://127.0.0.1:8000/cart/delete_cart_item/{id}`
+<ol>
+    <li>Users</li>
+<ol>
+        <li>login : <code>http://127.0.0.1:8000 user/login</code> </li>
+        <li>Register : <code>http://127.0.0.1:8000/user/register</code></li>
+        <li>Get User : <code>http://127.0.0.1:8000/user/get_user/{username}</code></li>
+</ol>
+    <li>Items</li>
+<ol>
+        <li>Add Item : <code>http://127.0.0.1:8000/item/add_item</code></li>
+        <li>Get Item : <code>http://127.0.0.1:8000/item/get_item/{id}</code></li>
+        <li>Delete Item : <code>http://127.0.0.1:8000/item/get_item/{id}</code></li>
+</ol>
+    <li>Payment</li>
+<ol>
+        <li>Add Item to Cart : <code>http://127.0.0.1:8000/cart/add_to_cart/{username}</code></li>
+        <li>Provide Item to Payments : <code>http://127.0.0.1:8000/cart/payment</code></li>
+        <li>Money Callback : <code>http://127.0.0.1:8000/cart/callback</code></li>
+        <li>Delete Cart Item : <code>http://127.0.0.1:8000/cart/delete_cart_item/{id}</code></li>
+</ol>
+</ol>
 
 > I pre-configured the Cruds with the payment process based on `PaypalAPI`, you can read the Official docs here [REST APIs / API Requests](https://developer.paypal.com/docs/api/reference/api-requests/)
 
@@ -88,7 +91,7 @@ $ uvicorn main:app --reload
 - [Database.py](data/database.py) :
 
 ```py
-# here you need to inster the  URI that should be used for the connection.
+# here you need to insert the Connection URL.
 SQLALCHEMY_DATABASE_URL = 'sqlite:///apollo.db'
 ```
 
