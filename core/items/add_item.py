@@ -23,4 +23,4 @@ def add_item(item: schemas.ItemInfo, db: Session = Depends(get_db)):
     db_item = crud.add_table(db=db, item=item)
     if db_item:
         raise HTTPException(status_code=200, detail="item registered")
-    return
+    return {"Item": "Not Foundfound"}

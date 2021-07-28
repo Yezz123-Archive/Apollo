@@ -21,4 +21,4 @@ def add_item(username, items: schemas.CartInfo, db: Session = Depends(get_db)):
     db_cart = crud.add_to_cart(db=db, username=username, items=items)
     if db_cart:
         raise HTTPException(status_code=200, detail="Registered to The Cart")
-    return
+    return {"Cart": "Item Not Registered to the Cart!"}

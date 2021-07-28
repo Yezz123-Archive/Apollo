@@ -121,8 +121,6 @@ def payment(db: Session, phone_number: int, total: int):
         "Timestamp": time,
         "TransactionType": "CustomerPayBillOnline",
         "Amount": total,
-        "PartyA": phone_number,
-        "PartyB": Business_code,
         "PhoneNumber": phone_number,
         "CallBackURL": "https://127.0.0.1:8000/callback",  # Money Callback
         "AccountReference": "User Payment",
