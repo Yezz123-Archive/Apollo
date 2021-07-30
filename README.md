@@ -11,22 +11,22 @@ Apollo provide a Basic API Compose :
 <ol>
     <li>Users</li>
 <ol>
-        <li>login : <code>http://127.0.0.1:8000 user/login</code> </li>
-        <li>Register : <code>http://127.0.0.1:8000/user/register</code></li>
-        <li>Get User : <code>http://127.0.0.1:8000/user/get_user/{username}</code></li>
+        <li>login : <code>http://localhost:8000 user/login</code> </li>
+        <li>Register : <code>http://localhost:8000/user/register</code></li>
+        <li>Get User : <code>http://localhost:8000/user/get_user/{username}</code></li>
 </ol>
     <li>Items</li>
 <ol>
-        <li>Add Item : <code>http://127.0.0.1:8000/item/add_item</code></li>
-        <li>Get Item : <code>http://127.0.0.1:8000/item/get_item/{id}</code></li>
-        <li>Delete Item : <code>http://127.0.0.1:8000/item/get_item/{id}</code></li>
+        <li>Add Item : <code>http://localhost:8000/item/add_item</code></li>
+        <li>Get Item : <code>http://localhost:8000/item/get_item/{id}</code></li>
+        <li>Delete Item : <code>http://localhost:8000/item/get_item/{id}</code></li>
 </ol>
     <li>Payment</li>
 <ol>
-        <li>Add Item to Cart : <code>http://127.0.0.1:8000/cart/add_to_cart/{username}</code></li>
-        <li>Provide Item to Payments : <code>http://127.0.0.1:8000/cart/payment</code></li>
-        <li>Money Callback : <code>http://127.0.0.1:8000/cart/callback</code></li>
-        <li>Delete Cart Item : <code>http://127.0.0.1:8000/cart/delete_cart_item/{id}</code></li>
+        <li>Add Item to Cart : <code>http://localhost:8000/cart/add_to_cart/{username}</code></li>
+        <li>Provide Item to Payments : <code>http://localhost:8000/cart/payment</code></li>
+        <li>Money Callback : <code>http://localhost:8000/cart/callback</code></li>
+        <li>Delete Cart Item : <code>http://localhost:8000/cart/delete_cart_item/{id}</code></li>
 </ol>
 </ol>
 
@@ -95,7 +95,7 @@ $ uvicorn main:app --reload
 SQLALCHEMY_DATABASE_URL = 'sqlite:///apollo.db'
 ```
 
-- For Example : 
+- For Example
 
 ```py
 SQLALCHEMY_DATABASE_URL = 'mysql://username:password@server/apollo'
